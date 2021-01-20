@@ -1,38 +1,248 @@
-.App {
-  text-align: center;
+@font-face{
+  src: url('./Roboto/Roboto-Medium.ttf');
+  font-family: "Roboto";
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body{
+  font-family: Roboto;
+  overflow: hidden;
+  width: 100%;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.App{
+  padding: 0px 30px;
+  position: relative;
   display: flex;
   flex-direction: column;
+}
+.App .App-header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  position: relative;
+}
+.App .App-header .Logo{
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  object-position: center;
+  box-shadow: rgba(0, 0, 0, 0.08) 0px 8px 28px;
+  border-radius: 50px;
+  animation: Logo_up 2s ease alternate-reverse infinite backwards;
+}
+.App .App-header .textos{
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+  align-items: center;
+}
+.App .App-header .textos span{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: 5px 5px;
+  font-size: 1.1rem;
+}
+.App .App-header .textos .hr{
+  margin: auto;
+  width: 5px;
+  height: 3vh;
+  display: flex;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-self: stretch;
+  background: black;
+}
+.App main{
+  padding: 0% 5%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
-.App-link {
-  color: #61dafb;
+.App main .left img{
+  width: 500px;
+  height: 380px;
+  object-fit: cover;
+  object-position: center;
+}
+.App main aside:nth-child(1){
+  display: flex;
+  padding: 0;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 500px;
+  gap: 10px;
+  align-items: flex-start;
+}
+.App main aside:nth-child(1) h1{
+  margin: 0px;
+  font-size: 3rem;
+  display: flex;
+  flex-direction: column;
+  letter-spacing: 1px;
+  gap: 0px; 
+}
+.App main aside:nth-child(1) p{
+  font-size: 1rem;
+  text-align: left;
+  width: 300px;
+  font-weight: normal;
+}
+.App main aside:nth-child(1) a{
+  display: flex;
+  transition: all .5s ease-in-out;
+  padding: 10px 20px;
+  text-decoration: none;
+  color: #fff;
+  font-size: 1.3rem;
+  border-radius: 50px;
+  background: rgb(255, 173, 31) ;
+}
+.App main aside:nth-child(1) a:hover{
+  background: rgb(121, 75, 196);
+}
+.bu{
+  width: 60px;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  transition: all .5s ease-in-out;
+  transform: translate(-15px,-15px);
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  background: rgb(121, 75, 196);
+  border-radius: 50px;
+}
+.bu:hover{
+  background: rgb(255, 173, 31);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+#confettis {
+  overflow: hidden;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+}
+
+.confetti {
+  left: 50%;
+  width: 16px;
+  height: 16px;
+  position: absolute;
+  transform-origin: left top;
+  animation: confetti 5s ease-in-out -2s infinite;
+}
+
+.confetti:nth-child(1) {
+  left: 10%;
+  animation-delay: 0;
+  background-color: #fc0120;
+}
+
+.confetti:nth-child(2) {
+  left: 20%;
+  animation-delay: -5s;
+  background-color: #8257e6;
+}
+
+.confetti:nth-child(3) {
+  left: 30%;
+  animation-delay: -3s;
+  background-color: #ffbf4d;
+}
+
+.confetti:nth-child(4) {
+  left: 40%;
+  animation-delay: -2.5s;
+  background-color: #fe5d7a;
+}
+
+.confetti:nth-child(5) {
+  left: 50%;
+  animation-delay: -4s;
+  background-color: #45ec9c;
+}
+
+.confetti:nth-child(6) {
+  left: 60%;
+  animation-delay: -6s;
+  background-color: #f6e327;
+}
+
+.confetti:nth-child(7) {
+  left: 70%;
+  animation-delay: -1.5s;
+  background-color: #f769ce;
+}
+
+.confetti:nth-child(8) {
+  left: 80%;
+  animation-delay: -2s;
+  background-color: #007de7;
+}
+
+.confetti:nth-child(9) {
+  left: 90%;
+  animation-delay: -3.5s;
+  background-color: #63b4fc;
+}
+
+.confetti:nth-child(10) {
+  left: 100%;
+  animation-delay: -2.5s;
+  background-color: #f9c4ea;
+}
+@media screen and (max-width:850px){
+  .App main{
+    flex-direction: column;
+    padding-top: 4%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
   }
-  to {
-    transform: rotate(360deg);
+  .App main .left img{
+    opacity: 0;
+    position: absolute;
+    top: 0;
+  }
+  .App main aside:nth-child(1){
+    display: flex;
+    padding: 0;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    height: 100%;
+    gap: 50px;
+    align-items: flex-start;
+  }
+}
+
+@keyframes confetti {
+  0% {
+    transform: rotateZ(15deg) rotateY(0deg) translate(0, 0);
+  }
+  25% {
+    transform: rotateZ(5deg) rotateY(360deg) translate(-5vw, 20vh);
+  }
+  50% {
+    transform: rotateZ(15deg) rotateY(720deg) translate(5vw, 60vh);
+  }
+  75% {
+    transform: rotateZ(5deg) rotateY(1080deg) translate(-10vw, 80vh);
+  }
+  100% {
+    transform: rotateZ(15deg) rotateY(1440deg) translate(10vw, 110vh);
+  }
+}
+@keyframes Logo_up{
+  from{
+    transform: translateY(-10px);
+  }
+  to{
+    transform: translateY(0px);
   }
 }
